@@ -10,7 +10,7 @@ public class DatabaseAdder {
 
     public void addEmployees(Connection connection, long id, String name, int code, String hibrid_name,
                              String patent_number, LocalDate start_date, String patent_owner,
-                             LocalDate end_date, int start_ragister_date) {
+                             LocalDate end_date, int start_register_date) {
 
         String sql = "INSERT INTO hr.seed(id, name, code, hibrid_name, patent_number, " +
                 "start_date, patent_owner, end_date, start_register_date)" +
@@ -27,7 +27,7 @@ public class DatabaseAdder {
             ps.setDate(6, Date.valueOf(start_date));
             ps.setString(7, patent_owner);
             ps.setDate(8, Date.valueOf(end_date));
-            ps.setInt(9, start_ragister_date);
+            ps.setInt(9, start_register_date);
 
             int rows = ps.executeUpdate();
 
